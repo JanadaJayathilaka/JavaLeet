@@ -1,8 +1,4 @@
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
-
-
 
 public class Main {
     public static void main(String[] args) {
@@ -17,17 +13,15 @@ public class Main {
 
 class Solution {
     public int singleNumber(int[] nums) {
-        int a = 0;
-        if(nums.length==1){
-            return nums[0];
-        }
+        int j = 1;
         Arrays.sort(nums);
-        for (int i = 0; i < nums.length-1; i+=2) {
-            if(nums[i]!= nums[i+1]){
-                a= nums[i];
-                return a;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] != nums[i - 1]) {
+                nums[j] = nums[i];
+                j++;
             }
+
         }
-        return nums[nums.length-1];
+        return j;
     }
 }
