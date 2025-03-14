@@ -3,33 +3,32 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
         Solution solution = new Solution();
-        System.out.println(solution.isPalindrome(-121));
+        int[] number = {-1,2,3,4,-3,-4,-8,-7};
+        System.out.println(solution.maximumCount(number));
 
     }
-}
-class Solution {
-    public boolean isPalindrome(int x) {
-        String xString = Integer.toString(x);
-        char[] charArray = xString.toCharArray();
 
-
-        int[] arr1 = new int[charArray.length];
-        int[] arr2 = new int[charArray.length];
-        for (int i = 0; i < charArray.length; i++) {
-
-                arr1[i] = charArray[i]-'0' ;
-
-
+    static class Solution {
+        public int maximumCount(int[] nums) {
+            int neg = 0;
+            int pos = 0;
+            for (int i = 0; i < nums.length; i++) {
+                if (nums[i]<0){
+                    neg++;
+                }else if(nums[i]>0){
+                    pos++;
+                }
+            }
+            if(neg<=pos){
+                return pos;
+            }else {
+                return neg;
+            }
 
         }
-        int k = 0;
-        for(int j = charArray.length-1;j>=0;j--){
-            arr2[k] = arr1[j];
-            k++;
-        }
-
-        return Arrays.equals(arr1,arr2);
-
-
     }
+
+
 }
+
+
