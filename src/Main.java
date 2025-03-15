@@ -3,32 +3,24 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
         Solution solution = new Solution();
-        int[] number = {-1,2,3,4,-3,-4,-8,-7};
-        System.out.println(solution.maximumCount(number));
+        int[] nums1 = {1,2,3,0,0,0};
+        int m = nums1.length;
+        int[] nums2 = {0,14};
+        int n= nums2.length;
+        solution.merge(nums1,m,nums2,n);
 
-    }
 
-    static class Solution {
-        public int maximumCount(int[] nums) {
-            int neg = 0;
-            int pos = 0;
-            for (int i = 0; i < nums.length; i++) {
-                if (nums[i]<0){
-                    neg++;
-                }else if(nums[i]>0){
-                    pos++;
-                }
-            }
-            if(neg<=pos){
-                return pos;
-            }else {
-                return neg;
-            }
-
-        }
     }
 
 
 }
+class Solution {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        for (int j = 0, i = m; j < n; j++) {
+            nums1[i] = nums2[j];
+            i++;
+        }
+        Arrays.sort(nums1);
 
-
+    }
+}
