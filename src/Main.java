@@ -3,11 +3,13 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
         Solution solution = new Solution();
-        int[] nums1 = {1,2,3,0,0,0};
-        int m = nums1.length;
-        int[] nums2 = {0,14};
-        int n= nums2.length;
-        solution.merge(nums1,m,nums2,n);
+        String[] flower = {"flower", "floor", "flord", "florida"};
+//        solution.longestCommonPrefix(flower);
+//        Arrays.sort(flower);
+//        System.out.println(Arrays.toString(flower));
+        solution.longestCommonPrefix(flower);
+
+        System.out.println(solution.longestCommonPrefix(flower));
 
 
     }
@@ -15,12 +17,23 @@ public class Main {
 
 }
 class Solution {
-    public void merge(int[] nums1, int m, int[] nums2, int n) {
-        for (int j = 0, i = m; j < n; j++) {
-            nums1[i] = nums2[j];
-            i++;
-        }
-        Arrays.sort(nums1);
+    public String longestCommonPrefix(String[] strs) {
+
+       Arrays.sort(strs);
+       String s1 = strs[0];
+       String s2 = strs[strs.length-1];
+       int idx = 0;
+       while(idx<s1.length()&& idx<s2.length()){
+           if(s1.charAt(idx)==s2.charAt(idx)){
+               idx++;
+           }else {
+               break;
+           }
+
+       }
+       return s1.substring(0,idx);
+
+
 
     }
 }
