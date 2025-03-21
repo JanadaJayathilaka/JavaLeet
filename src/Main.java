@@ -1,15 +1,10 @@
 import java.util.Arrays;
+import java.util.Stack;
 
 public class Main {
     public static void main(String[] args) {
         Solution solution = new Solution();
-        String[] flower = {"flower", "floor", "flord", "florida"};
-//        solution.longestCommonPrefix(flower);
-//        Arrays.sort(flower);
-//        System.out.println(Arrays.toString(flower));
-        solution.longestCommonPrefix(flower);
-
-        System.out.println(solution.longestCommonPrefix(flower));
+        System.out.println(solution.isValid("({})"));
 
 
     }
@@ -17,23 +12,23 @@ public class Main {
 
 }
 class Solution {
-    public String longestCommonPrefix(String[] strs) {
+    public boolean isValid(String s) {
+        Stack<Character> stack = new Stack<>();
+        for(char c:s.toCharArray()){
+            if (c=='(' ||c =='{' || c== '['){
+                stack.push(c);
+            }else{
+                if (stack.isEmpty() ||
+                        (c == ')' && stack.pop() != '(') ||
+                        (c == '}' && stack.pop() != '{') ||
+                        (c == ']' && stack.pop() != '[')
+                ) {
+                    return false;
+                }
+                }
 
-       Arrays.sort(strs);
-       String s1 = strs[0];
-       String s2 = strs[strs.length-1];
-       int idx = 0;
-       while(idx<s1.length()&& idx<s2.length()){
-           if(s1.charAt(idx)==s2.charAt(idx)){
-               idx++;
-           }else {
-               break;
-           }
+            }
+        return stack.isEmpty();
+        }
 
-       }
-       return s1.substring(0,idx);
-
-
-
-    }
 }
