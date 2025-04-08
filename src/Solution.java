@@ -4,25 +4,13 @@ import java.util.*;
 public class Solution {
 
     public static void main(String[] args) {
+        Solution solution =  new Solution();
 
-        Scanner sc=new Scanner(System.in);
-        String A=sc.next();
-        /* Enter your code here. Print output to STDOUT. */
-//        String sample = "ass";
-        char[] chararr = A.toCharArray();
+        System.out.println(solution.mySqrt(8));
+    }
 
-        int count = 0;
-        for (int i = 0; i < A.length()/2; i++) {
-            if(chararr[i]==chararr[A.length()-i-1]){
-               count++;
-            }
-
-        }
-        if (count==A.length()/2){
-            System.out.println("Yes");
-        }else {
-            System.out.println("No");
-        }
+    public int mySqrt(int x) {
+       return (int)Math.sqrt(x);
 
     }
 }
