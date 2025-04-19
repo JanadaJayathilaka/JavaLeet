@@ -4,15 +4,16 @@ import java.util.*;
 public class Solution {
 
     public static void main(String[] args) {
-        Solution solution =  new Solution();
+       Scanner input = new Scanner(System.in);
 
-        System.out.println(solution.mySqrt(8));
+
+       float marks =input.nextInt();
+        System.out.println(marks);
+
+
     }
 
-    public int mySqrt(int x) {
-       return (int)Math.sqrt(x);
 
-    }
 }
 
 
