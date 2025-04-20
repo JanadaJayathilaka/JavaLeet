@@ -4,15 +4,33 @@ import java.util.*;
 public class Solution {
 
     public static void main(String[] args) {
-       Scanner input = new Scanner(System.in);
 
+        Scanner scanner = new Scanner(System.in);
 
-       float marks =input.nextInt();
-        System.out.println(marks);
+       while(true){
+           char op = scanner.next().trim().charAt(0);
+           if(op=='+'|| op =='*'||op=='-'||op=='/'||op=='%'){
+               int num1 = scanner.nextInt();
+               int num2 = scanner.nextInt();
 
-
+               if(op=='+'){
+                   System.out.println(num1+num2);
+               } else if (op=='-') {
+                   System.out.println(num1-num2);
+               } else if (op=='*') {
+                   System.out.println(num1*num2);
+               } else if (op=='/') {
+                   System.out.println(num1/num2);
+               } else if (op=='%') {
+                   System.out.println(num1%num2);
+               } else if (op=='x'||op=='X') {
+                   break;
+               } else {
+                   System.out.println("Enter valid one");
+               }
+           }
+       }
     }
-
 
 }
 
