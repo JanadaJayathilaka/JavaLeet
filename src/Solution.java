@@ -1,31 +1,31 @@
 import java.io.*;
+import java.lang.reflect.Array;
 import java.util.*;
 
 public class Solution {
 
     public static void main(String[] args) {
+        Scanner in =  new Scanner(System.in);
 
-        System.out.println(isArmsorNot(153));
 
+        int[][] arr = new int[3][2];
+        System.out.println(arr.length);
 
+        for(int row = 0;row<arr.length; row++){
+            for (int col = 0; col < arr[row].length; col++) {
+                arr[row][col] =in.nextInt();
+            }
+        }
+
+        for(int row = 0;row<arr.length; row++){
+            for (int col = 0; col < arr[row].length; col++) {
+                System.out.print(arr[row][col]);
+            }
+        }
 
 
     }
-    static boolean isArmsorNot(int n){
-        int original = n;
-        int sum =0;
-        while(n>0){
-            int rem = n%10;
-            n=n/10;
-            sum+= rem*rem*rem;
-        }
 
-        if(sum==original){
-            return true;
-        }
-        else
-            return false;
-    }
 
 }
 
