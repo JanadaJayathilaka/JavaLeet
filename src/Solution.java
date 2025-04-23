@@ -5,27 +5,25 @@ import java.util.*;
 public class Solution {
 
     public static void main(String[] args) {
-        Scanner in =  new Scanner(System.in);
+        int[] arr= {1,2,3,4,5,6};
 
-
-        int[][] arr = new int[3][2];
-        System.out.println(arr.length);
-
-        for(int row = 0;row<arr.length; row++){
-            for (int col = 0; col < arr[row].length; col++) {
-                arr[row][col] =in.nextInt();
-            }
-        }
-
-        for(int row = 0;row<arr.length; row++){
-            for (int col = 0; col < arr[row].length; col++) {
-                System.out.print(arr[row][col]);
-            }
-        }
-
+        System.out.println( linearSearch(arr, 1));
 
     }
 
+    static boolean linearSearch(int[] arr,int target){
+        if(arr.length==0)
+        {
+            return false;
+        }
+        for (int index = 0; index < arr.length; index++) {
+            int element = arr[index];
+            if(element==target){
+                return true;
+            }
+        }
+        return false;
+    }
 
 }
 
