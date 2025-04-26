@@ -21,7 +21,7 @@ public class FirstAndLAstPosition {
         return binarySearch(arr,target,start,end);
     }
 
-    private static int binarySearch(int[] arr, int target, int start, int end) {
+     static int binarySearch(int[] arr, int target, int start, int end) {
     while(start<=end){
         int mid = start+(end-start)/2;
 
